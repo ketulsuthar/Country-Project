@@ -15,3 +15,13 @@ fields terminated by ','
 stored as textfile
 location '/user/edureka_85838/country';
 
+-- Count number of countries based on landmass.
+select case
+ when landmass=1 then 'N.America'
+ when landmass=2 then 'S.America'
+ when landmass=3 then 'Europe'
+ when landmass=4 then 'Africa'
+ when landmass=5 then 'Asia'
+ when landmass=6 then 'Oceania'
+ else 'others'
+end , count(*) AS Count from country group by landmass;
