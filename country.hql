@@ -35,4 +35,11 @@ select count(cnt_name) as CountryWithIcon from country where icon=binary('1');
 -- Count of countries which have same top left and top right color in flag.
 select count(cnt_name) as Country from country where topleft=botright;
 
---
+-- Count number of countries based on zone
+select case
+ when zone=1 then 'NE'
+ when zone=2 then 'SE'
+ when zone=3 then 'SW'
+ when zone=4 then 'NW'
+ else 'others'
+end, count(cnt_name) as Count from country group by zone;
