@@ -25,3 +25,4 @@ select case
  when landmass=6 then 'Oceania'
  else 'others'
 end , count(*) AS Count from country group by landmass;
+
