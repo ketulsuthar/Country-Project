@@ -43,3 +43,10 @@ select case
  when zone=4 then 'NW'
  else 'others'
 end, count(cnt_name) as Count from country group by zone;
+
+-- Find out largest county in terms of area in NE zone.
+select cnt_name, max(area) as LargeArea from country where zone=1 group by cnt_name order by LargeArea desc limit 1;
+
+-- Find out least populated country in S.America landmass.
+
+
