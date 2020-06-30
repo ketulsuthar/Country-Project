@@ -48,5 +48,5 @@ end, count(cnt_name) as Count from country group by zone;
 select cnt_name, max(area) as LargeArea from country where zone=1 group by cnt_name order by LargeArea desc limit 1;
 
 -- Find out least populated country in S.America landmass.
-
+select cnt_name, min(population) as LeastPopulated from country where landmass=2 group by cnt_name order by LeastPopulated limit 1;
 
