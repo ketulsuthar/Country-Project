@@ -26,3 +26,7 @@ select case
  else 'others'
 end , count(*) AS Count from country group by landmass;
 
+--Find out top 5 country with Sum of bars and strips in a flag.
+select cnt_name, sum(bars+stripes) as barstripes from country group by cnt_name order by barstripes desc limit 5;
+
+--
