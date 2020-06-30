@@ -31,3 +31,8 @@ select cnt_name, sum(bars+stripes) as barstripes from country group by cnt_name 
 
 -- Count of countries with icon.
 select count(cnt_name) as CountryWithIcon from country where icon=binary('1');
+
+-- Count of countries which have same top left and top right color in flag.
+select count(cnt_name) as Country from country where topleft=botright;
+
+--
