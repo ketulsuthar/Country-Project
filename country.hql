@@ -29,4 +29,5 @@ end , count(*) AS Count from country group by landmass;
 --Find out top 5 country with Sum of bars and strips in a flag.
 select cnt_name, sum(bars+stripes) as barstripes from country group by cnt_name order by barstripes desc limit 5;
 
---
+-- Count of countries with icon.
+select count(cnt_name) as CountryWithIcon from country where icon=binary('1');
