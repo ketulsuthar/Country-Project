@@ -1,6 +1,6 @@
 # Country-Project
 
-####Problem Statement
+#### Problem Statement
 A. Count number of countries based on landmass.<br/>
 B. Find out top 5 country with Sum of bars and strips in a flag.<br>
 C. Count of countries with icon.<br>
@@ -13,6 +13,6 @@ I. Find most common colour among flags from all countries.<br>
 J. Sum of all circles present in all country flags.<br>
 K. Count of countries which have both icon and text in flag.<br>
 
-####Dataset
+#### Dataset
 [Data](./flag.data_dataset.txt)<br>
 [Description](./flag.names_data_description.docx)
