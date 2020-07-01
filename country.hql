@@ -50,3 +50,26 @@ select cnt_name, max(area) as LargeArea from country where zone=1 group by cnt_n
 -- Find out least populated country in S.America landmass.
 select cnt_name, min(population) as LeastPopulated from country where landmass=2 group by cnt_name order by LeastPopulated limit 1;
 
+-- Find out largest speaking language among all countries.
+select case
+ when language=1 then 'English'
+ when language=2 then 'Spanish'
+ when language=3 then 'French'
+ when language=4 then 'German'
+ when language=5 then 'Slavic'
+ when language=6 then 'Other Indo-European'
+ when language=7 then 'Chinese'
+ when language=8 then 'Arabic'
+ when language=9 then 'Japanese/Turkish/Finnish/Magyar'
+ else 'others'
+end , count(*) as count from country group by language order by count desc;
+
+-- Find most common colour among flags from all countries.
+
+
+
+-- Sum of all circles present in all country flags.
+
+
+-- Count of countries which have both icon and text in flag.
+select count(cnt_name) from country where icon = binary('1') and text = binary('1');
