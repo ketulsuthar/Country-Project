@@ -69,7 +69,7 @@ end , count(*) as count from country group by language order by count desc;
 
 
 -- Sum of all circles present in all country flags.
-
+select sum(circles) from country;
 
 -- Count of countries which have both icon and text in flag.
 select count(cnt_name) from country where icon = binary('1') and text = binary('1');
