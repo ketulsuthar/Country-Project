@@ -2,14 +2,14 @@ set hive.cli.print.current.db = true;
 
 --create database
 create database countrydb;
-use contrydb;
+use countrydb;
 
 --create table
 create external table country (cnt_name string, landmass int, zone int,
 area bigint,population int, language int, religion  int,
-bars int, stripes  int, colours  int, red BINARY , green BINARY , blue BINARY ,gold BINARY ,white BINARY ,black BINARY , orange BINARY ,
-mainhue char(6), circles int, crosses int, saltires int, quarters  int, sunstars  int, crescent  BINARY , triangle  BINARY ,
-icon BINARY , animate BINARY , text BINARY , topleft char(6),botright  char(6))
+bars int, stripes  int, colours  int, red int , green int , blue int ,gold int ,white int ,black int , orange int ,
+mainhue char(6), circles int, crosses int, saltires int, quarters  int, sunstars  int, crescent  BINARY , triangle  int ,
+icon int , animate int, text int , topleft char(6),botright  char(6))
 row format delimited
 fields terminated by ','
 stored as textfile
@@ -30,7 +30,7 @@ end , count(*) AS Count from country group by landmass;
 select cnt_name, sum(bars+stripes) as barstripes from country group by cnt_name order by barstripes desc limit 5;
 
 -- Count of countries with icon.
-select count(cnt_name) as CountryWithIcon from country where icon=binary('1');
+select count(cnt_name) as CountryWithIcon from country where icon=1;
 
 -- Count of countries which have same top left and top right color in flag.
 select count(cnt_name) as Country from country where topleft=botright;
@@ -72,4 +72,4 @@ end , count(*) as count from country group by language order by count desc;
 select sum(circles) from country;
 
 -- Count of countries which have both icon and text in flag.
-select count(cnt_name) from country where icon = binary('1') and text = binary('1');
+select count(cnt_name) from country where icon = 1 and text = 1;
