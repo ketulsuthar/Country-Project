@@ -65,7 +65,7 @@ select case
 end , count(*) as count from country group by language order by count desc;
 
 -- Find most common colour among flags from all countries.
-
+select sum(blue) as blue,sum(green) as green,sum(red) as red ,sum(gold) as gold,sum(white) as white, sum(black) as black,sum(orange) as orange from country;
 
 
 -- Sum of all circles present in all country flags.
